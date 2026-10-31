@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Clinica <img src="@Url.Content("~/Imagens/SenaiLogo.png")" width="200px" alt="Senai"/></h1>
+</div>
+
+<div class="">
+    <h2>VISUALIZAR TABELAS</h2>
+    <hr />
+    <div class="row g-3">
+        <section class="card" style="max-width: 320px">
+            <img src="@Url.Content("~/Imagens/Consulta.jpg")" class="card-img-top" alt="Consulta">
+            <div class="card-body">
+                <h4 class="card-title">Consultas</h4>
+                <p class="card-text">Visualize, registre e gerencie consultas</p>
+                <a class="btn btn-outline-success" asp-area="" asp-controller="Consulta" asp-action="Index" class="btn btn-solid-primary"><img src="@Url.Content("~/Icons/book.svg")" /> Visualizar consultas</a>
+            </div>
+        </section>
+        <section class="card" style="max-width: 320px">
+            <img src="@Url.Content("~/Imagens/Paciente.jpg")" class="card-img-top" alt="Paciente">
+            <div class="card-body">
+                <h4 class="card-title">Pacientes</h4>
+                <p class="card-text">Visualize, registre e gerencie consultas</p>
+                <a class="btn btn-outline-success" asp-area="" asp-controller="Paciente" asp-action="Index"><img src="@Url.Content("~/Icons/book.svg")" /> Visualizar pacientes</a>
+            </div>
+        </section>
+        <section class="card" style="max-width: 320px">
+            <img src="@Url.Content("~/Imagens/Exame.png")" class="card-img-top" alt="Exame">
+            <div class="card-body">
+                <h4 class="card-title">Exames</h4>
+                <p class="card-text">Visualize, registre e gerencie exames</p>
+                <a class="btn btn-outline-success" asp-area="" asp-controller="Exame" asp-action="Index"><img src="@Url.Content("~/Icons/book.svg")" /> Visualizar exames</a>
+            </div>
+        </section>
+    </div>
+</div>

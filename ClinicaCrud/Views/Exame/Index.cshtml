@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ClinicaCrud.Models.Exame>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a class="btn btn-outline-success" asp-action="Create"><img src="@Url.Content("~/Icons/plus-lg.svg")" /> Create New</a>
+</p>
+<table class="table table-striped mb-0">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoExame)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resultado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataExame)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Consulta)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoExame)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Resultado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataExame)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Consulta.Observacoes)
+            </td>
+            <td>
+                    <a class="btn btn-outline-secondary" asp-action="Edit" asp-route-id="@item.ExameId"><img src="@Url.Content("~/Icons/pencil-square.svg")" /> Edit</a> |
+                    <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.ExameId"><img src="@Url.Content("~/Icons/question.svg")" /> Details</a> |
+                    <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.ExameId"><img src="@Url.Content("~/Icons/trash.svg")" /> Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

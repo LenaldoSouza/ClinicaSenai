@@ -1,0 +1,62 @@
+﻿@model ClinicaCrud.Models.Exame
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Exame</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ConsultaId" class="control-label"></label>
+                <select asp-for="ConsultaId" class ="form-control" asp-items="ViewBag.ConsultaId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoExame" class="control-label"></label>
+                <select asp-for="TipoExame" class="form-control">
+                    <option>Raio-X (Radiografia)</option>
+                    <option>Ultrassonografia (USG)</option>
+                    <option>Tomografia computadorizada (TC)</option>
+                    <option>Ressonância magnética (RM)</option>
+                    <option>Mamografia</option>
+                    <option>Hemograma completo</option>
+                    <option>Glicemia em jejum</option>
+                    <option>Colesterol</option>
+                    <option>Ureia e creatinina</option>
+                    <option>TSH e T4 livre</option>
+                    <option>Eletrocardiograma</option>
+                    <option>Ecocardiograma</option>
+                    <option>Teste ergométrico</option>
+                    <option>MAPA</option>
+                </select>
+                <span asp-validation-for="TipoExame" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resultado" class="control-label"></label>
+                <input asp-for="Resultado" class="form-control" />
+                <span asp-validation-for="Resultado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataExame" class="control-label"></label>
+                <input asp-for="DataExame" class="form-control" />
+                <span asp-validation-for="DataExame" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-outline-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-outline-danger" asp-action="Index"><img src="@Url.Content("~/Icons/grid-3x3.svg")" /> Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
